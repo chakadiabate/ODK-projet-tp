@@ -1,13 +1,31 @@
-
+.page {
+	width: 500px;/*utiliser pour la largeur de la page*/
+	margin: 0 auto;/*pour la marge externe*/
+	padding: 20px;/*pour la marge interne*/
+	border: 1px solid #79b7e0;/*utilisé pour ajouter la bordure*/
+	border-radius: 5px;/*utilisé pour ajouter la bordure*/
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: auto;
+}
+body{
+  background: url(./fond-image.PNG) no-repeat center center fixed;/*ajout d'image*/
+  background-size: cover;/*pour couvrir toute le body*/
+}
+.page h1{
+  text-align: center;/*pour aligner au centre*/
+}
 table {
-    border-collapse: collapse;
+    border-collapse: collapse;/*pour supprimer la bordure*/
     width: 100%;
     margin-bottom: 20px;
   }
   
   th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px 3px solid #ddd;/*bordure pour le  tableau*/
+    padding: 8px;/*pour la marge interne*/
   }
   
   th {
@@ -17,12 +35,12 @@ table {
   .task {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px;
+    justify-content: space-between;/*utilisé pour l'espacement*/
+    padding: 10px;/*pour la marge interne*/
     border-radius: 4px;
     margin-bottom: 5px;
     background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    
   }
   
   .task:hover {
@@ -53,4 +71,31 @@ table {
   .task.low {
     background-color: #f0f0f0;
   }
-  
+  .page #add-task{
+
+    padding: 10px;
+    background-color: #083b0a;
+    width: 100px;
+    height: 40px;
+    color: white;
+    break-after: none;
+    border-radius: 150px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .page .add-task:hover {
+    background-color: #3e8e41;
+  }
+/* Media queries for additional responsive adjustments (optional) */
+
+@media only screen and (max-width: 768px) {
+  /* Styles for smaller screens (e.g., adjust font sizes, margins, etc.) */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  /* Styles for medium-sized screens (e.g., adjust layout elements) */
+}
+
+@media only screen and (min-width: 992px) {
+  /* Styles for larger screens (e.g., refine layout for wider viewports) */
+}
