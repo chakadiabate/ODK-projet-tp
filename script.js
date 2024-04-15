@@ -23,7 +23,7 @@ function createTaskElement(name, priority, date) {
   taskElement.appendChild(taskDate);
 
   const deleteButton = document.createElement('button');
-  deleteButton.classList.add('.delete-button');
+  deleteButton.classList.add('.deleteButton');
   deleteButton.textContent = 'Supprimer';
   taskElement.appendChild(deleteButton);
 
@@ -35,24 +35,19 @@ function deleteButton(taskElement) {
   taskElement.parentNode.removeChild(taskElement);
 
   // Trouver l'index de la tâche à supprimer dans le tableau
-  const taskIndex = tasks.findIndex(task => task.name === taskElement.querySelector('.task-name').textContent);
+  const taskIndex = tasks.findIndex(task => task.name === taskElement.querySelector('#task-name').textContent);
 
   // Supprimer la tâche du tableau
   tasks.splice(taskIndex, 1);
 
   // Enregistrer les tâches mises à jour dans le localStorage
   saveData(tasks);
+
 }
 
 // Ajouter un écouteur d'événement "click" à chaque bouton de suppression
 for (const taskElement of taskContainer.querySelectorAll('.deleteButton')) {
-  taskElement.addEventListener('click', () => deleteButton(taskElement));
-}
-
-
-// Fonction pour afficher les tâches dans un tableau (non utilisée pour l'instant)
-function displayTasksInTable(tasks) {
-  // ... (implementation remains the same as before)
+  taskElement.addEventListener('click', () => {deleteButton(taskElement)});
 }
 
 // Fonction pour enregistrer les tâches dans le stockage local (localStorage)
@@ -118,9 +113,6 @@ for (const task of tasks) {
   taskContainer.appendChild(taskElement);
 }
 
-// Pour afficher les tâches initialement chargées (si la fonction displayTasksInTable est utilisée)
-
-// ...  ...
 
 // Ajuster la largeur du conteneur de tâches en fonction de la taille de l'écran (facultatif)
 function adjustTaskContainerWidth() {

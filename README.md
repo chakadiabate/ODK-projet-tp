@@ -1,4 +1,4 @@
-Nom du projet: GESTION DE TÂCHE
+Nom du projet: BAARA
 Les informations sur le projet:
 J'ai ajouté une zone saisie permettant d'ajouter une nouvelle tâche.
 J'ai ajouté quelque priorité donnant le choix au utilisateur d'en choisir une.
